@@ -2,6 +2,8 @@
 const btnMenu = document.querySelector('.menu');
 const menu = document.querySelector('.navbar-div');
 const btnCloseMenu = document.querySelector('.close');
+const popupWindow = document.getElementById('pop');
+/* const Links = document.querySelector('.nav-link'); */
 
 btnMenu.addEventListener('click', () => {
   menu.classList.toggle('show-menu');
@@ -10,14 +12,18 @@ btnCloseMenu.addEventListener('click', () => {
   menu.classList.toggle('show-menu');
 });
 
+/* Links.forEach((n) => n.addEventListener('click', () => {
+ menu.classList.remove('.navbar-div');
+})); */
+
 const projects = [
   {
     id: 1,
     projectimages: {
-      cardimage: './images/snapshoot1.png',
+      cardimage: './images/snapshoot5.png',
       dotimage: './images/Counter.png',
-      seeliveimage: '.images/seelive1.png',
-      seesourceimage: './images/seesource1.png',
+      seeliveimage: './images/seelive.png',
+      seesourceimage: './images/seesource.png',
     },
     title: 'Tonic',
     projectdesc: '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
@@ -35,10 +41,10 @@ const projects = [
   {
     id: 2,
     projectimages: {
-      cardimage: './images/snapshoot2.png',
+      cardimage: './images/snapshoot4.png',
       dotimage: './images/Counter.png',
-      seeliveimage: '.images/seelive1.png',
-      seesourceimage: './images/seesource1.png',
+      seeliveimage: './images/seelive.png',
+      seesourceimage: './images/seesource.png',
     },
     title: 'Tonic',
     projectdesc: '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
@@ -56,10 +62,10 @@ const projects = [
   {
     id: 3,
     projectimages: {
-      cardimage: './images/snapshoot3.png',
+      cardimage: './images/snapshoot1.png',
       dotimage: './images/Counter.png',
-      seeliveimage: '.images/seelive1.png',
-      seesourceimage: './images/seesource1.png',
+      seeliveimage: './images/seelive.png',
+      seesourceimage: './images/seesource.png',
     },
     title: 'Facebook 360',
     projectdesc: '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
@@ -77,10 +83,10 @@ const projects = [
   {
     id: 4,
     projectimages: {
-      cardimage: './images/snapshoot4.png',
+      cardimage: './images/snapshoot2.png',
       dotimage: './images/Counter.png',
-      seeliveimage: '.images/seelive1.png',
-      seesourceimage: './images/seesource1.png',
+      seeliveimage: './images/seelive.png',
+      seesourceimage: './images/seesource.png',
     },
     title: 'Uber Navigation',
     projectdesc: '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
@@ -97,10 +103,6 @@ const projects = [
   },
 
 ];
-// select popup parent
-const popupWindow = document.querySelector('popup');
-/* const wrapper = document.querySelector('wrapper'); */
-
 // select btn see project
 const project1 = document.querySelector('#project1');
 const project2 = document.querySelector('#project2');
@@ -124,17 +126,16 @@ function displayPopup(project) {
     close,
     navlinks,
   } = projects[project];
-
   popupWindow.innerHTML = `
           <div class="div-content">
               <button class="close-popup" onclick="hidePopup()">${close}</button>
               <h2 class="card-title">${title}</h2>
                 <ul class="list">
                   <li class="list-item1">${skills[0]}</li>
-                  <li class="list-item"><img src="${projectimages[1]}" alt="dot image" class="dot"/>${skills[1]}</</li>
-                  <li class="list-item"><img src="${projectimages[1]}" alt="dot image" class="dot"/>${skills[2]}</</li></ul>
+                  <li class="list-item"><img src="${projectimages.dotimage}" alt="dot image" class="dot"/>${skills[1]}</</li>
+                  <li class="list-item"><img src="${projectimages.dotimage}" alt="dot image" class="dot"/>${skills[2]}</</li></ul>
           </div>
-          <div class="div-card-pop"><img src="${projectimages[0]}" alt="card image" class="card-image1"/></div>
+          <div class="div-card-pop"><img src="${projectimages.cardimage}" alt="card image" class="card-image1"/></div>
           <div class="text-btn">
           <div class="text">
               <p class="card-desc">${projectdesc}</p>
@@ -145,9 +146,9 @@ function displayPopup(project) {
               <li class="lang-list">${techies[1]}</li>
               <li class="lang-list">${techies[2]}</li>
             </ul>
-          <button class="btn-live">${seelivebtntext}<img href="${navlinks[0]} src="${projectimages[2]}" alt="live demo" class="live">
+          <button class="btn-source">${seelivebtntext}<img href="${navlinks.source}" src="${projectimages.seesourceimage}" alt="live demo" class="source">
           </button>
-          <button class="btn-source">${seesourcebtntext}<img href="${navlinks[1]}" src="${projectimages[3]}"" alt="live demo" class="source">
+          <button class="btn-source">${seesourcebtntext}<img href="${navlinks.source}" src="${projectimages.seeliveimage}" alt="live demo" class="source">
           </button>
         </div>   
         </div>
@@ -157,26 +158,21 @@ function displayPopup(project) {
 // card1
 project1.addEventListener('click', () => {
   displayPopup(0);
-  popupWindow.classList.remove('hide-popup');
-  popupWindow.style.display = 'block';
 });
 
 // card2
 project2.addEventListener('click', () => {
   displayPopup(1);
-  popupWindow.style.display = 'block';
 });
 
 // page card3
 project3.addEventListener('click', () => {
   displayPopup(2);
-  popupWindow.style.display = 'block';
 });
 
 // page card4
 project4.addEventListener('click', () => {
   displayPopup(3);
-  popupWindow.style.display = 'block';
 });
 popupWindow.addEventListener('click', hidePopup);
 
@@ -210,8 +206,10 @@ form.addEventListener('submit', () => {
   localStorage.setItem('userdata', JSON.stringify(data));
 });
 
-// retrueve data
+// retrieve data
 const storedData = JSON.parse(localStorage.getItem('userdata'));
-username.value = storedData.username;
-useremail.value = storedData.useremail;
-usermsg.value = storedData.usermsg;
+if (storedData) {
+  document.getElementById('name').value = storedData.username;
+  useremail.value = storedData.useremail;
+  usermsg.value = storedData.usermsg;
+}
