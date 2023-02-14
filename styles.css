@@ -524,26 +524,25 @@ textarea {
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-font-white);
-  margin-top: 6rem;
-  margin-bottom: 2rem;
   top: 0;
   bottom: 0;
-  left: 1;
+  left: 0;
   padding: 1rem;
   border-radius: 1rem;
   width: 80%;
   height: auto;
   z-index: 10;
-  align-items: center;  
   margin: 0 auto;
 }
 
 .show-popup {
   display: block;
 }
+
 .hide {
   display: none;
 }
+
 .div-card-pop {
   width: 100%;
   justify-content: center;
