@@ -146,7 +146,7 @@ function displayPopup(project) {
               <li class="lang-list">${techies[1]}</li>
               <li class="lang-list">${techies[2]}</li>
             </ul>
-          <button class="btn-source">${seelivebtntext}<img href="${navlinks.source}" src="${projectimages.seesourceimage}" alt="live demo" class="source">
+          <button class="btn-source">${seelivebtntext}<img href="${navlinks.live}" src="${projectimages.seesourceimage}" alt="live demo" class="source">
           </button>
           <button class="btn-source">${seesourcebtntext}<img href="${navlinks.source}" src="${projectimages.seeliveimage}" alt="live demo" class="source">
           </button>
@@ -182,7 +182,7 @@ const emailAddress = document.getElementById('email');
 const hintErrorMsg = document.getElementById('errHint');
 
 form.addEventListener('submit', (e) => {
-  if (emailAddress !== emailAddress.value.toLowerCase) {
+  if (emailAddress !== emailAddress.value.toLowerCase()) {
     hintErrorMsg.textContent = 'Please enter email in lowercase!';
     hintErrorMsg.style.color = '#f0000';
     emailAddress.style.border = '2px solid #f0000';
