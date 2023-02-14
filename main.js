@@ -157,7 +157,7 @@ function displayPopup(project) {
 // card1
 project1.addEventListener('click', () => {
   displayPopup(0);
-  popupWindow.classList.add('popup');
+  popupWindow.classList.remove('hide-popup');
   popupWindow.style.display = 'block';
 });
 
