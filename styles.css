@@ -14,6 +14,7 @@
   --colorh-font-2: #172b4d;
   --colorp-font-3: #344563;
   --color-font-white: #fff;
+  
 }
 
 *,
@@ -37,6 +38,7 @@ html {
   position: fixed;
   width: 100%;
   background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);;
 }
 
 @media screen and (max-width: 768px) {
