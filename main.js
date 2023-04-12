@@ -26,7 +26,8 @@ const projects = [
       seesourceimage: './images/seesource.png',
     },
     title: 'Tonic',
-    projectdesc: '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
+    projectdesc:
+      '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
     skills: ['CANOPY', 'Back End Dev', '2015'],
     techies: ['html', 'css', 'javaScript'],
     btntext: 'See Project',
@@ -47,7 +48,8 @@ const projects = [
       seesourceimage: './images/seesource.png',
     },
     title: 'Tonic',
-    projectdesc: '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
+    projectdesc:
+      '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
     skills: ['FACEBOOK', 'Back End Dev', '2015'],
     techies: ['html', 'css', 'javaScript'],
     btntext: 'See Project',
@@ -68,7 +70,8 @@ const projects = [
       seesourceimage: './images/seesource.png',
     },
     title: 'Facebook 360',
-    projectdesc: '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
+    projectdesc:
+      '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
     skills: ['CANOPY', 'Back End Dev', '2015'],
     techies: ['html', 'css', 'javaScript'],
     btntext: 'See Project',
@@ -89,7 +92,8 @@ const projects = [
       seesourceimage: './images/seesource.png',
     },
     title: 'Uber Navigation',
-    projectdesc: '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
+    projectdesc:
+      '  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis enim officiis nulla tempore qui voluptatibus, veniam necessitatibus in deserunt porro fugit, cupiditate soluta maxime. Dicta sed quisquam nulla esse at?',
     skills: ['CANOPY', 'Back End Dev', '2015'],
     techies: ['html', 'css', 'javaScript'],
     btntext: 'See Project',
@@ -101,7 +105,6 @@ const projects = [
       source: '#',
     },
   },
-
 ];
 // select btn see project
 const project1 = document.querySelector('#project1');
@@ -192,7 +195,6 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-// local storage
 const username = document.getElementById('name');
 const useremail = document.getElementById('useremail');
 const usermsg = document.getElementById('textarea');
@@ -208,8 +210,8 @@ form.addEventListener('submit', () => {
 
 // retrieve data
 const storedData = JSON.parse(localStorage.getItem('userdata'));
-if (storedData) {
-  document.getElementById('name').value = storedData.username;
-  useremail.value = storedData.useremail;
-  usermsg.value = storedData.usermsg;
+if (storedData !== null) {
+  document.getElementById('name').value = storedData.username || '';
+  useremail.value = storedData.useremail || '';
+  usermsg.value = storedData.usermsg || '';
 }

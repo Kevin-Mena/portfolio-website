@@ -70,7 +70,7 @@
 
 ## 🚀 Live Demo <a name="live-demo" ></a>
 
-- [Live Demo](Coming soon...)
+- [Live Demo](https://kevin-mena.github.io/portfolio-website/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,7 +91,7 @@ Example commands:
 
 ```sh
   cd <desired folder to contain project>
-  git clone <https://github.com/Kevin-Mena/MyFirst-PortfolioWeb-Project.git>
+  git clone <https://github.com/Kevin-Mena/portfolio-website.git>
 
 ```
 
@@ -142,7 +142,7 @@ npm test
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Kevin-Mena/MyFirst-PortfolioWeb-Project/issues).
+Feel free to check the [issues page](https://github.com/Kevin-Mena/portfolio-website/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
